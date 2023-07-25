@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+body{
+    background-image: url(img/retrato-nina-feliz-tomando-selfie-perro-parque-abrazando-mascota-sosteniendo-camara_662046-2181.avif);
+    background-repeat:no-repeat;
+    display: grid;
+    height: 100%;
+    width: 100%;
+    place-items: center;
+
+};
+
+.title{
+    background-color:rgba(10, 76, 241, 0.445);
+}
+
+.contecLogin{
+    background: linear-gradient(#eeaeca, #a6c9f1);
+    margin:100px 20px 30px ;
+    font-weight: bold;
+    position: relative;
+    border-radius: 12px;
+    padding: 10px  30px;
+}
+
+
+.login{
+    margin: 30px 30px 20px;
+    
+    background:#eeaeca, #a6c9f1 ;
+    cursor: pointer;
+    border:none;
+    padding: 10px  30px;
+    color: rgb(41, 44, 44);
+    font-size: 15px;
+    font-weight: bold;
+    position: relative;
+    border-radius: 12px;
+}
+.registro{
+cursor: pointer;
+color: rgb(28, 53, 63);
+}
+.correo{
+   margin-top: 30px;
+
+}
+.contraseña{
+    display: flex;
+    
+    margin-top: 20px;
+    
+
+}
+
