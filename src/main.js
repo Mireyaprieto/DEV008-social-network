@@ -2,6 +2,7 @@
 import { Home }     from './components/Home.js';
 import { Register } from './components/Register.js';
 import {Login }     from './components/login.js';
+
 //import { myFunction } from './lib/index.js';
 
 const rootDiv = document.getElementById("root");
@@ -24,9 +25,13 @@ export const onNavigate = (pathname)=>{
 
 };
 window.onpopstate =()=>{
-    rootDiv.appendChild(component());
+    while (rootDiv.firstChild){
+        rootDiv.removeChild(rootDiv.firstChild);
+    }
+    rootDiv.appendChild(component(onNavigate));
 };
 const component = routes[window.location.pathname];
 rootDiv.appendChild(component(onNavigate));
 
  //myFunction()
+

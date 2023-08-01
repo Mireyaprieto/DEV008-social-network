@@ -3,22 +3,42 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'poppins', sans-serif;
+    
 }
 body{
-    background-image: url(img/retrato-nina-feliz-tomando-selfie-perro-parque-abrazando-mascota-sosteniendo-camara_662046-2181.avif);
+    background:linear-gradient(#e0bfcd9d, #a1afbe8f);
     background-repeat:no-repeat;
     display: grid;
     height: 100%;
     width: 100%;
     place-items: center;
 
-};
-
+}
 .title{
-    background-color:rgba(10, 76, 241, 0.445);
+    margin: center;
+}
+.imagen{
+    
+    
+    width: 100px;
+    height: 100px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    background: #5cb85c;
+}
+.imagenhome{
+    display: flex;
+    margin-left: 130px;
+    width: 100px;
+    height: 100px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+     
 }
 
-.contecLogin{
+.contenLogin{
     background: linear-gradient(#eeaeca, #a6c9f1);
     margin:100px 20px 30px ;
     font-weight: bold;
@@ -56,4 +76,64 @@ color: rgb(28, 53, 63);
     
 
 }
+.titulocorreo{
+    display: flex;
+    position: absolute;
+    margin-top: 15px;
+}
+.titulocontraseña{
+    
+    display: flex;
+    position: absolute;
+    margin-top: 5px;
+
+}
+.botonr {
+    display: flex;
+    margin: 30px 30px 3%;
+    background:#d36997a8, #a6c9f1 ;
+    cursor: pointer;
+    border:none;
+    padding: 10px  30px;
+    color: rgb(41, 44, 44);
+    font-size: 15px;
+    font-weight: bold;
+    position: relative;
+    border-radius: 22px;
+}
+.botonr:hover {
+	background:linear-gradient(to bottom, #b6719fb6 5%, #8ceee6 100%);
+
+}
+.botonr:active {
+	position:relative;
+	top:1px;
+}
+.botonl {
+	display: flex;
+    margin-top: -50px;
+    margin-left: 200px;
+    background:#d36997a8, #a6c9f1 ;
+    cursor: pointer;
+    border:none;
+    padding: 10px  30px;
+    color: rgb(41, 44, 44);
+    font-size: 15px;
+    font-weight: bold;
+    position: relative;
+    border-radius: 22px;
+}
+.botonl:hover {
+	background:linear-gradient(to bottom, #b6719fb6 5%, #a0e4ee91 100%);
+	
+}
+.botonl:active {
+	position:relative;
+	top:1px;
+}
+.bienvenida{
+    
+}
+
+
 

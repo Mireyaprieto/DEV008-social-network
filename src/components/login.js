@@ -1,33 +1,63 @@
 //import { onNavigate } from "../main.js";
-
+import { login } from '../lib/firebese.js';
 export const Login =(onNavigate)=>{
-    const HomeDiv =document.createElement("div");    
+    const HomeDiv =document.createElement("div"); 
+    const imagen= document.createElement("img");
     const ButtonHome =document.createElement("button"); 
     const loginTitle = document.createElement("h3");
+    const titlecorreo=document.createElement("h6");
+    const titleContraseña =document.createElement("h6");
     const textCorreo = document.createElement("input");
     const textContraseña =document.createElement("input");
     const ButtonLogin =document.createElement("button");
     const buttonRegister=document.createElement("h5");
     ButtonHome.textContent="Regresa al home";
     buttonRegister.textContent="Registrate ";
+    titlecorreo.textContent="Email";
+    titleContraseña.textContent="Contraseña";  
+    loginTitle.textContent = "Inicia Sesión";
+    ButtonLogin.textContent="Iniciar sesion";
+    imagen.src="./img/logo.jfif";
+    
+
     ButtonHome.addEventListener("click",()=> onNavigate('/')); 
-    buttonRegister.addEventListener("click",()=>onNavigate('/register'))  
+    buttonRegister.addEventListener("click",()=>onNavigate('/register'));
+    HomeDiv.appendChild(imagen);
     HomeDiv.appendChild(ButtonHome);
     HomeDiv.appendChild(loginTitle);
+    HomeDiv.appendChild(titlecorreo);
     HomeDiv.appendChild(textCorreo);
+    HomeDiv.appendChild(titleContraseña);
     HomeDiv.appendChild(textContraseña);
     HomeDiv.appendChild(ButtonLogin);
-    HomeDiv.appendChild(buttonRegister)
-    loginTitle.textContent = "Iniciar Sesión";
-    ButtonLogin.textContent="Sing in";
+    HomeDiv.appendChild(buttonRegister); 
+
+    imagen.className="imagen";
     loginTitle.className=("title");
+    titlecorreo.className=("titulocorreo");
+    titleContraseña.className=("titulocontraseña");
     ButtonLogin.className=("login");
     ButtonHome.className=("Home");
-    HomeDiv.className=("contecLogin");
+    HomeDiv.className=("contenLogin");
     textContraseña.className=("contraseña");
+    textCorreo.type="email";
+    textContraseña.type="password";
     textCorreo.className=("correo");
-    buttonRegister.id=("register")
+    
     buttonRegister.className=("registro");
+
+    ButtonLogin.addEventListener("click",()=>{
+        const correo = textCorreo.value;
+         const password= textContraseña.value;
+        login(correo, password).then(()=>{
+            onNavigate('/')
+        }).catch((error)=>{
+            console.log(error)
+           
+           
+            
+        })
+    })
 
 
  
