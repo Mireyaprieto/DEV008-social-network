@@ -3,7 +3,7 @@ import { login } from '../lib/firebese.js';
 export const Login =(onNavigate)=>{
     const HomeDiv =document.createElement("div"); 
     const imagen= document.createElement("img");
-    const ButtonHome =document.createElement("button"); 
+    /*const ButtonHome =document.createElement("button"); */
     const loginTitle = document.createElement("h3");
     const titlecorreo=document.createElement("h6");
     const titleContraseña =document.createElement("h6");
@@ -11,7 +11,7 @@ export const Login =(onNavigate)=>{
     const textContraseña =document.createElement("input");
     const ButtonLogin =document.createElement("button");
     const buttonRegister=document.createElement("h5");
-    ButtonHome.textContent="Regresa al home";
+    /*ButtonHome.textContent="Regresa al home";*/
     buttonRegister.textContent="Registrate ";
     titlecorreo.textContent="Email";
     titleContraseña.textContent="Contraseña";  
@@ -20,10 +20,10 @@ export const Login =(onNavigate)=>{
     imagen.src="./img/logo.jfif";
     
 
-    ButtonHome.addEventListener("click",()=> onNavigate('/')); 
+    /*ButtonHome.addEventListener("click",()=> onNavigate('/')); */
     buttonRegister.addEventListener("click",()=>onNavigate('/register'));
     HomeDiv.appendChild(imagen);
-    HomeDiv.appendChild(ButtonHome);
+    /*HomeDiv.appendChild(ButtonHome);*/
     HomeDiv.appendChild(loginTitle);
     HomeDiv.appendChild(titlecorreo);
     HomeDiv.appendChild(textCorreo);
@@ -37,7 +37,7 @@ export const Login =(onNavigate)=>{
     titlecorreo.className=("titulocorreo");
     titleContraseña.className=("titulocontraseña");
     ButtonLogin.className=("login");
-    ButtonHome.className=("Home");
+    /*ButtonHome.className=("Home");*/
     HomeDiv.className=("contenLogin");
     textContraseña.className=("contraseña");
     textCorreo.type="email";
@@ -49,10 +49,16 @@ export const Login =(onNavigate)=>{
     ButtonLogin.addEventListener("click",()=>{
         const correo = textCorreo.value;
          const password= textContraseña.value;
-        login(correo, password).then(()=>{
+        login(correo, password).then((user)=>{
             onNavigate('/')
         }).catch((error)=>{
             console.log(error)
+            if (error.code === 'auth/user-not-found'){
+                alert ("usuario no registrado ");
+                  
+            }else (error.message === 'auth/wrong-password'); {
+               alert ("Contraseña incorrecta")
+            }
            
            
             

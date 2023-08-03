@@ -3,7 +3,7 @@ import { registro} from '../lib/firebese.js';
 export const Register =(onNavigate)=>{
     const HomeDiv =document.createElement("div"); 
     const imagen= document.createElement("img");
-    const ButtonHome =document.createElement("button"); 
+    /*const ButtonHome =document.createElement("button");*/ 
     const loginTitle = document.createElement("h3");
     const titlecorreo=document.createElement("h6");
     const titleContraseña =document.createElement("h6");
@@ -11,7 +11,7 @@ export const Register =(onNavigate)=>{
     const textContraseña =document.createElement("input");
     const ButtonRegister =document.createElement("button");
     
-    ButtonHome.textContent="Regresa al home";
+    /*ButtonHome.textContent="Regresa al home";*/
     
     titlecorreo.textContent="Email";
     titleContraseña.textContent="Contraseña";
@@ -20,10 +20,10 @@ export const Register =(onNavigate)=>{
     imagen.src="./img/logo.jfif";
     
 
-    ButtonHome.addEventListener("click",()=> onNavigate('/')); 
+    /*ButtonHome.addEventListener("click",()=> onNavigate('/')); */
     
     HomeDiv.appendChild(imagen);
-    HomeDiv.appendChild(ButtonHome);
+    /*HomeDiv.appendChild(ButtonHome);*/
     HomeDiv.appendChild(loginTitle);
     HomeDiv.appendChild(titlecorreo);
     HomeDiv.appendChild(textCorreo);
@@ -37,7 +37,7 @@ export const Register =(onNavigate)=>{
     titlecorreo.className=("titulocorreo");
     titleContraseña.className=("titulocontraseña");
     ButtonRegister.className=("login");
-    ButtonHome.className=("Home");
+    /*ButtonHome.className=("Home");*/
     HomeDiv.className=("contenLogin");
     textContraseña.className=("contraseña");
     textCorreo.type="email";
@@ -48,10 +48,20 @@ export const Register =(onNavigate)=>{
     ButtonRegister.addEventListener("click",()=>{
     const correo = textCorreo.value;
      const password= textContraseña.value;
-    registro(correo, password).then(()=>{
-        onNavigate('/login')
+    registro(correo, password).then((user)=>{
+       onNavigate('/login')
+       /*console.log(user)*/
     }).catch((error)=>{
-        console.log(error)
+        /*console.log(error.code)*/
+        if (error.code === 'auth/invalid-email' ){
+            alert("Correo invalido");
+        
+        } else (error.message === 'auth/weak-password'); {
+            alert("Contraseña debil ");
+        }
+
+        
+        /*console.log("error")*/
     })
    })
  

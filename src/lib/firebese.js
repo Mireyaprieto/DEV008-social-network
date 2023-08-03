@@ -1,5 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+import { getFirestore, setDoc} from "firebase/firestore";
 
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword} from "firebase/auth";
 // TODO: Add SDKs for Firebase products that you want to use
@@ -22,6 +23,8 @@ const app = initializeApp(firebaseConfig);
 
 // Initialize Firebase Authentication and get a reference to the service
 const auth = getAuth(app);
+// Initialize Cloud Firestore and get a reference to the service
+const db = getFirestore(app);
 
 export const registro = (email, password)=>{
  return createUserWithEmailAndPassword(auth, email, password)
@@ -31,11 +34,11 @@ export const registro = (email, password)=>{
     const user = userCredential.user;
     return user
   })
-  .catch((error) => {
+  /*.catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
-    // ..
-  });
+    return errorCode
+  });*/
   
 }
  export const login =(email, password)=>{
@@ -45,9 +48,10 @@ export const registro = (email, password)=>{
     const user = userCredential.user;
     return user
   })
-  .catch((error) => {
+  /*.catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
-  });
+
+  });*/
 
  }
