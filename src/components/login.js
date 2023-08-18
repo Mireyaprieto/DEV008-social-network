@@ -55,7 +55,7 @@ export const Login =(onNavigate)=>{
             console.log(error)
             if (error.code === 'auth/user-not-found'){
                 alert ("usuario no registrado ");
-                  
+                   
             }else (error.message === 'auth/wrong-password'); {
                alert ("Contraseña incorrecta")
             }

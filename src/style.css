@@ -8,6 +8,7 @@
 body{
     background:linear-gradient(#e0bfcd9d, #a1afbe8f);
     background-repeat:no-repeat;
+    padding-bottom: 500px;
     display: grid;
     height: 100%;
     width: 100%;
@@ -131,9 +132,12 @@ color: rgb(28, 53, 63);
 	position:relative;
 	top:1px;
 }
-.bienvenida{
-    
-}
 
+.card{
+    margin: 5px;
+    padding: 30px;
+    border: 1px solid black;
+    box-shadow: #eeaeca 5px 5px;
+}
 
 

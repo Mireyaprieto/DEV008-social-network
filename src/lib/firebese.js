@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore, setDoc} from "firebase/firestore";
+import { getFirestore, collection, addDoc, deleteDoc , onSnapshot,doc} from "firebase/firestore";
 
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword} from "firebase/auth";
 // TODO: Add SDKs for Firebase products that you want to use
@@ -55,3 +55,34 @@ export const registro = (email, password)=>{
   });*/
 
  }
+ export const publicar=(correo,texto)=> {
+  return  addDoc(collection(db, "post"), {
+    correo: correo,
+    texto: texto,
+  });
+ }
+  export const usuarioActual= ()=>{ 
+    if (!auth.currentUser){
+    return undefined
+    }
+    return auth.currentUser.email
+  }
+  
+
+export const listenPost = (callback)=>{
+  onSnapshot(collection(db, "post"), (docs) => {
+    callback(docs);
+    
+  });
+}
+
+export const eliminar= ()=>{
+  deleteDoc(doc(db, "post", "id"));
+  
+
+}
+
+
+
+
+  
