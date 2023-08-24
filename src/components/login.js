@@ -51,6 +51,8 @@ export const Login =(onNavigate)=>{
          const password= textContraseña.value;
         login(correo, password).then((user)=>{
             onNavigate('/')
+           
+
         }).catch((error)=>{
             console.log(error)
             if (error.code === 'auth/user-not-found'){
@@ -63,11 +65,12 @@ export const Login =(onNavigate)=>{
            
             
         })
+       
     })
 
 
  
     return HomeDiv;
 
-
+    
 }
