@@ -2,6 +2,7 @@
 import { Home }     from './components/Home.js';
 import { Register } from './components/Register.js';
 import {Login }     from './components/login.js';
+import { Muro } from './components/Muro.js';
 
 
 
@@ -11,6 +12,7 @@ const routes = {
     '/': Home, 
     '/register': Register,
     '/login': Login,
+    '/muro': Muro,
     
 };
 

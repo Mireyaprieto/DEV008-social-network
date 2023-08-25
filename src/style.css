@@ -39,6 +39,16 @@ body{
     border-radius: 50%;
     box-shadow: #eeaeca 5px 5px;
 }
+.imagenhome1{
+  display: flex;
+  margin-left: 130px;
+  width: 150px;
+  height: 150px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  box-shadow: #eeaeca 5px 5px;
+}
 
 .contenLogin{
     background: linear-gradient(#eeaeca, #a6c9f1);
@@ -90,14 +100,14 @@ color: rgb(28, 53, 63);
     border: 1px solid black;
     box-shadow: #eeaeca 5px 5px;
 }
-.contenido{
+.contenido1{
     margin: 20px 0 0  80px;
     width: 250px;
     height: 50px;
     box-shadow: #e2a4eb 5px 5px;
 }
-.bienvenida{
-    margin: 20px 0 0  80px;
+.bienvenida1{
+    margin: 20px 0 10px 80px;
     font-family: cursive;
 }
 .botonr{
@@ -195,7 +205,7 @@ color: rgb(28, 53, 63);
     transform: scale(0.95);
   }
 
-.botonPublicar{
+.botonPublicar1{
     margin: 10px 10px 10px 150px;
     width: 90px;
   height: 20px;
@@ -215,7 +225,7 @@ color: rgb(28, 53, 63);
   overflow: hidden;
 }
 
-.botonPublicar::before {
+.botonPublicar1::before {
     position: absolute;
     
     color: #edeaf1;
@@ -229,17 +239,17 @@ color: rgb(28, 53, 63);
     background-color: rgba(34, 31, 31, 0.842);
     background-size: 200%;
   }
-  .botonPublicar:hover {
+  .botonPublicar1:hover {
     background-position: right;
     transition-duration: 1s;
   }
   
-  .botonPublicar:hover::before {
+  .botonPublicar1:hover::before {
     background-position: right;
     transition-duration: 1s;
   }
   
-  .botonPublicar:active {
+  .botonPublicar1:active {
     transform: scale(0.95);
   }
   .login{
@@ -338,7 +348,7 @@ color: rgb(28, 53, 63);
     transform: scale(0.95);
   }
  .imagendec{
-    margin: -500px 0 -10px -650px;
+    margin: 50px 0 0 0;
     display: flex;
    
     width: -70px;
@@ -348,3 +358,74 @@ color: rgb(28, 53, 63);
     border-radius: 30%;
  
  }
+ .imagendiv{
+  float: left;
+  margin :0 10px 0 50px;
+ 
+  border: 1px solid black;
+  box-shadow: #eeaeca 5px 5px;
+ }
+ .imagendec1{
+  margin-right: 1000px ;
+  width: 100px;
+  height: 100px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  box-shadow: #a6c9f1 5px 5px;
+  
+ /*margin-left: -500px;
+ margin-right: 500px;
+    padding: 30px;
+    border: 1px solid black;
+    box-shadow: #eeaeca 5px 5px;*/
+  
+
+}
+.botonC{
+  margin: 80px 20px 20px ;
+  width: 90px;
+  height: 20px;
+border: none;
+border-radius: 10px;
+background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+/*background: linear-gradient(to right,#a1b4b9a6,#d3b8cf,#a5749a,#77530a,#ffd277,#77530a);*/
+background-size: 250%;
+background-position: left;
+color: #272625;
+position: relative;
+display: flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+transition-duration: 1s;
+overflow: hidden;
+}
+
+.botonC::before {
+  position: absolute;
+  
+  color: #edeaf1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 97%;
+  height: 90%;
+  border-radius: 8px;
+  transition-duration: 1s;
+  background-color: rgba(34, 31, 31, 0.842);
+  background-size: 200%;
+}
+.botonC:hover {
+  background-position: right;
+  transition-duration: 1s;
+}
+
+.botonC:hover::before {
+  background-position: right;
+  transition-duration: 1s;
+}
+
+.botonC:active {
+  transform: scale(0.95);
+}

@@ -1,9 +1,8 @@
 //import { onNavigate } from "../main.js";
-import { registro} from '../lib/firebese.js';
+import { registro} from '../lib/firebase.js';
 export const Register =(onNavigate)=>{
     const HomeDiv =document.createElement("div"); 
     const imagen= document.createElement("img");
-    /*const ButtonHome =document.createElement("button");*/ 
     const loginTitle = document.createElement("h3");
     const titlecorreo=document.createElement("h6");
     const titleContraseña =document.createElement("h6");
@@ -11,7 +10,7 @@ export const Register =(onNavigate)=>{
     const textContraseña =document.createElement("input");
     const ButtonRegister =document.createElement("button");
     
-    /*ButtonHome.textContent="Regresa al home";*/
+   
     
     titlecorreo.textContent="Email";
     titleContraseña.textContent="Contraseña";
@@ -20,10 +19,9 @@ export const Register =(onNavigate)=>{
     imagen.src="./img/logo.jfif";
     
 
-    /*ButtonHome.addEventListener("click",()=> onNavigate('/')); */
+    
     
     HomeDiv.appendChild(imagen);
-    /*HomeDiv.appendChild(ButtonHome);*/
     HomeDiv.appendChild(loginTitle);
     HomeDiv.appendChild(titlecorreo);
     HomeDiv.appendChild(textCorreo);
@@ -37,7 +35,6 @@ export const Register =(onNavigate)=>{
     titlecorreo.className=("titulocorreo");
     titleContraseña.className=("titulocontraseña");
     ButtonRegister.className=("login");
-    /*ButtonHome.className=("Home");*/
     HomeDiv.className=("contenLogin");
     textContraseña.className=("contraseña");
     textCorreo.type="email";
@@ -50,9 +47,9 @@ export const Register =(onNavigate)=>{
      const password= textContraseña.value;
     registro(correo, password).then((user)=>{
        onNavigate('/login')
-       /*console.log(user)*/
+       
     }).catch((error)=>{
-        /*console.log(error.code)*/
+        
         if (error.code === 'auth/invalid-email' ){
             alert("Correo invalido");
         
@@ -61,7 +58,7 @@ export const Register =(onNavigate)=>{
         }
 
         
-        /*console.log("error")*/
+        
     })
    })
  

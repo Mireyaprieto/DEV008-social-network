@@ -1,17 +1,15 @@
 //import { onNavigate } from "../main.js";
-import { login } from '../lib/firebese.js';
+import { login } from '../lib/firebase.js';
 export const Login =(onNavigate)=>{
     const HomeDiv =document.createElement("div"); 
-    const imagen= document.createElement("img");
-    /*const ButtonHome =document.createElement("button"); */
+    const imagen= document.createElement("img");    
     const loginTitle = document.createElement("h3");
     const titlecorreo=document.createElement("h6");
     const titleContraseña =document.createElement("h6");
     const textCorreo = document.createElement("input");
     const textContraseña =document.createElement("input");
     const ButtonLogin =document.createElement("button");
-    const buttonRegister=document.createElement("h5");
-    /*ButtonHome.textContent="Regresa al home";*/
+    const buttonRegister=document.createElement("h5");    
     buttonRegister.textContent="Registrate ";
     titlecorreo.textContent="Email";
     titleContraseña.textContent="Contraseña";  
@@ -20,10 +18,9 @@ export const Login =(onNavigate)=>{
     imagen.src="./img/logo.jfif";
     
 
-    /*ButtonHome.addEventListener("click",()=> onNavigate('/')); */
+    
     buttonRegister.addEventListener("click",()=>onNavigate('/register'));
     HomeDiv.appendChild(imagen);
-    /*HomeDiv.appendChild(ButtonHome);*/
     HomeDiv.appendChild(loginTitle);
     HomeDiv.appendChild(titlecorreo);
     HomeDiv.appendChild(textCorreo);
@@ -37,7 +34,6 @@ export const Login =(onNavigate)=>{
     titlecorreo.className=("titulocorreo");
     titleContraseña.className=("titulocontraseña");
     ButtonLogin.className=("login");
-    /*ButtonHome.className=("Home");*/
     HomeDiv.className=("contenLogin");
     textContraseña.className=("contraseña");
     textCorreo.type="email";
@@ -50,7 +46,7 @@ export const Login =(onNavigate)=>{
         const correo = textCorreo.value;
          const password= textContraseña.value;
         login(correo, password).then((user)=>{
-            onNavigate('/')
+            onNavigate('/muro')
            
 
         }).catch((error)=>{

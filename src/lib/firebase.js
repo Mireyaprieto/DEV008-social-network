@@ -2,7 +2,7 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, addDoc, deleteDoc , onSnapshot,doc, getDoc,query, orderBy} from "firebase/firestore";
 
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword} from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword,signOut} from "firebase/auth";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -29,16 +29,11 @@ const db = getFirestore(app);
 export const registro = (email, password)=>{
  return createUserWithEmailAndPassword(auth, email, password)
   
-  .then((userCredential) => {
-    // Signed in 
+  .then((userCredential) => { 
     const user = userCredential.user;
     return user
   })
-  /*.catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    return errorCode
-  });*/
+  
   
 }
  export const login =(email, password)=>{
@@ -48,13 +43,10 @@ export const registro = (email, password)=>{
     const user = userCredential.user;
     return user
   })
-  /*.catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-
-  });*/
+  
 
  }
+ 
  export const publicar=(correo,texto)=> {
   return  addDoc(collection(db, "post"), {
     correo: correo,
@@ -69,8 +61,7 @@ export const registro = (email, password)=>{
     return auth.currentUser.email
   }
   
-/*const q = query(citiesRef, orderBy("name"), limit(3));
-const q = query(collection(db, "cities"), where("state", "==", "CA"));*/
+
 export const listenPost = (callback)=>{
   const filter = query(collection(db,"post" ),orderBy("fecha","desc"))
   onSnapshot(filter, (docs) => {
@@ -82,9 +73,8 @@ export const listenPost = (callback)=>{
 export const eliminar= id=>{
   deleteDoc(doc(db, "post", id));
 }
-export const editarpost= id=>{
-  getDoc(doc(db, "post",id));
-}
+
+
 
 
 
