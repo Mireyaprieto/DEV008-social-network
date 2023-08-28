@@ -12,13 +12,13 @@ Tikpet es una red social  para usuarios  dueños de mascotas, en la cual pueden 
 ## 2. prototipo
 ![inicio sesión](inicio-sesión.JPG)
 ![registro](registro.JPG)
-![muro] (muro.JPG)
+![muro](muro.JPG)
 
 
 ## 3.  resultado final
 ![inicio sesión](inicio-sesión1.JPG)
 ![registro](registro1.JPG)
-![muro] (muro1.JPG)
+![muro](muro1.JPG)
 
  
 
